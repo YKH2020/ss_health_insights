@@ -1,5 +1,7 @@
-pandas
-numpy
-matplotlib
+numpy==2.1.0
+pandas==2.2.2
+matplotlib==3.9.0
+scikit-learn
 click
 setuptools
+seaborn
