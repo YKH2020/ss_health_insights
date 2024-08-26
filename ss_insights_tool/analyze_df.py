@@ -56,4 +56,60 @@ def show_anxiety_levels():
     # print the encoded correlation matrix
     print("Encoded df:", corr_matrix)
 
-show_anxiety_levels()
+'''This function generates a heatmap that shows the positive/negative correlations between students' anxiety, stress, their current CGPA'''
+def show_stress_levels():
+    # Make a smaller df for the columns we need
+    smaller_df = df[['Anxiety Label', 'Stress Label', '6. Current CGPA']]
+
+    # Initialize the LabelEncoder
+    le = LabelEncoder()
+
+    # Fit and transform the data
+    encoded_gpa = le.fit_transform(smaller_df['6. Current CGPA'])
+    encoded_stress = le.fit_transform(smaller_df['Stress Label'])
+    encoded_anxiety = le.fit_transform(smaller_df['Anxiety Label'])
+
+    # Make a df off of the encoded data
+    enc_df = pd.DataFrame({
+        'Encoded GPA': encoded_gpa,
+        'Encoded Stress': encoded_stress,
+        'Encoded Anxiety Label': encoded_anxiety
+    })
+
+    # Make a correlation matrix and display the heatmap
+    corr_matrix = enc_df.corr()
+    seaborn.heatmap(corr_matrix, annot=True)
+    plt.title("Frequency of Stress Levels: How does anxiety level and GPA relate to stress levels?")
+    plt.show()
+
+    # print the encoded correlation matrix
+    print("Encoded df:", corr_matrix)
+
+'''This function generates a heatmap that shows the positive/negative correlations between students' depression, stress, and anxiety levels'''
+def show_depression_levels():
+    # Make a smaller df for the columns we need
+    smaller_df = df[['Depression Label', 'Stress Label', 'Anxiety Label']]
+
+    # Initialize the LabelEncoder
+    le = LabelEncoder()
+
+    # Fit and transform the data
+    encoded_stress = le.fit_transform(smaller_df['Stress Label'])
+    encoded_depression = le.fit_transform(smaller_df['Depression Label'])
+    encoded_anxiety = le.fit_transform(smaller_df['Anxiety Label'])
+
+    # Make a df off of the encoded data
+    enc_df = pd.DataFrame({
+        'Encoded Depression': encoded_depression,
+        'Encoded Stress': encoded_stress,
+        'Encoded Anxiety Label': encoded_anxiety
+    })
+
+    # Make a correlation matrix and display the heatmap
+    corr_matrix = enc_df.corr()
+    seaborn.heatmap(corr_matrix, annot=True)
+    plt.title("Frequency of Depression Levels: Higher anxiety, higher stress, or both?")
+    plt.show()
+
+    # print the encoded correlation matrix
+    print("Encoded df:", corr_matrix)
