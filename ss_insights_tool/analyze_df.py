@@ -2,11 +2,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 import seaborn
-
-df = pd.read_csv("../ss_data.csv")
+    
+#df = pd.read_csv("../ss_data.csv")
 
 '''This function shows the percentages of the 18-22 and 23-26 age ranges, and then drops the age column inplace'''
-def show_and_clear_ages():
+def show_and_clear_ages(df):
     # We only want 18-22 and 23-26 age ranges, other answers are deprecated
     df.query('`1. Age` == "18-22" or `1. Age` == "23-26"', inplace=True)
 
@@ -15,7 +15,7 @@ def show_and_clear_ages():
     df.drop(["1. Age"], axis=1, inplace=True)
 
 '''This function shows the percentages of the male and female demographics, and then drops the gender column inplace'''
-def show_and_clear_gender():
+def show_and_clear_gender(df):
     # We only want Males and Females, other answers are deprecated
     df.query('`2. Gender` == "Male" or `2. Gender` == "Female"', inplace=True)
 
@@ -24,7 +24,7 @@ def show_and_clear_gender():
     df.drop(["2. Gender"], axis=1, inplace=True)
 
 '''This function generates a heatmap that shows the positive/negative correlations between students' university, dept, year, anxiety label, and whether they received a waiver/scholarship'''
-def show_anxiety_levels():
+def show_anxiety_levels(df):
     # Make a smaller df for the columns we need
     smaller_df = df[['3. University', '4. Department', '5. Academic Year', 'Anxiety Label', '7. Did you receive a waiver or scholarship at your university?']]
 
@@ -57,7 +57,7 @@ def show_anxiety_levels():
     print("Encoded df:", corr_matrix)
 
 '''This function generates a heatmap that shows the positive/negative correlations between students' anxiety, stress, their current CGPA'''
-def show_stress_levels():
+def show_stress_levels(df):
     # Make a smaller df for the columns we need
     smaller_df = df[['Anxiety Label', 'Stress Label', '6. Current CGPA']]
 
@@ -86,7 +86,7 @@ def show_stress_levels():
     print("Encoded df:", corr_matrix)
 
 '''This function generates a heatmap that shows the positive/negative correlations between students' depression, stress, and anxiety levels'''
-def show_depression_levels():
+def show_depression_levels(df):
     # Make a smaller df for the columns we need
     smaller_df = df[['Depression Label', 'Stress Label', 'Anxiety Label']]
 
@@ -113,3 +113,5 @@ def show_depression_levels():
 
     # print the encoded correlation matrix
     print("Encoded df:", corr_matrix)
+
+#print(df.head(10))

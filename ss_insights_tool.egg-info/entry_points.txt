@@ -1,0 +1,6 @@
+[console_scripts]
+analyze-ages = cli:analyze_ages
+analyze-anxiety = cli:analyze_anxiety
+analyze-depression = cli:analyze_depression
+analyze-gender = cli:analyze_gender
+analyze-stress = cli:analyze_stress

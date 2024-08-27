@@ -1,0 +1,10 @@
+README.md
+setup.py
+ss_insights_tool/__init__.py
+ss_insights_tool/analyze_df.py
+ss_insights_tool.egg-info/PKG-INFO
+ss_insights_tool.egg-info/SOURCES.txt
+ss_insights_tool.egg-info/dependency_links.txt
+ss_insights_tool.egg-info/entry_points.txt
+ss_insights_tool.egg-info/requires.txt
+ss_insights_tool.egg-info/top_level.txt
