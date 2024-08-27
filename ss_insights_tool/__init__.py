@@ -7,9 +7,3 @@ COMPLETED 3: What leads to depression? Higher anxiety, higher stress, or both? (
 COMPLETED e: What are the ages of everyone here?
 COMPLETED e: What is the gender demographic?
 '''
-
-def main():
-    pass
-
-if __name__ == "__main__":
-    main()

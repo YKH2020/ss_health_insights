@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: ss_insights_tool
+Version: 0.1
+Author: Yash Hegde
+Author-email: ykh2@duke.edu
+Requires-Dist: numpy==2.1.0
+Requires-Dist: pandas==2.2.2
+Requires-Dist: matplotlib==3.9.0
+Requires-Dist: scikit-learn
+Requires-Dist: click
+Requires-Dist: seaborn
